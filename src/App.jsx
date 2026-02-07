@@ -1,17 +1,34 @@
-import React from 'react'
+import { useState } from 'react'
 import './app.scss'
 import Doc from './components/Doc'
 import Nav from './components/Nav'
 import Github from './components/windows/Github'
+import Note from './components/windows/Note'
+import Resume from './components/windows/Resume'
+import Spotify from './components/windows/Spotify'
+import Cli from './components/windows/Cli'
 
 
-const App = () => {
+function App() {
+
+  const [windowsState, setWindowsState] = useState({
+    github: false,
+    note: false,
+    resume: false,
+    spotify: false,
+    cli: false
+  })
+
   return (
     <main>
       <Nav />
-      <Doc />
+      <Doc windowsState={windowsState} setWindowsState={setWindowsState}/>
       
-      <Github />
+      { windowsState.github && <Github windowName="github"  setWindowsState={setWindowsState} />}
+      { windowsState.note && <Note windowName="note"  setWindowsState={setWindowsState} />}
+      { windowsState.resume && <Resume windowName="resume"  setWindowsState={setWindowsState} />}
+      { windowsState.spotify && <Spotify windowName="spotify"   setWindowsState={setWindowsState} />}
+      { windowsState.cli && <Cli windowName="cli"  setWindowsState={setWindowsState} />}
     </main>
   )
 }

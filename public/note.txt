@@ -1,0 +1,103 @@
+/**
+ * @file: profile.config.ts
+ * @author: Tauseef Ahmad
+ * @summary: A motivated fresher specializing in MERN Stack and Generative AI.
+ */
+
+// --------------------------------------------------
+// 1. CORE SKILLS & TECH STACK
+// --------------------------------------------------
+
+const TECH_STACK = {
+  frontend: [
+    "React.js",    // 80%
+    "Next.js",     // 70%
+    "TailwindCSS", // 65%
+  ],
+  backend: [
+    "Node.js",     // 75%
+    "Express.js",  // 70%
+    "MongoDB",     // 70%
+  ],
+  tools: ["Git", "VS Code", "Postman", "OpenAI API"]
+};
+
+// --------------------------------------------------
+// 2. PROJECTS / EXPERIENCE
+// --------------------------------------------------
+
+class ProfessionalHistory {
+
+  /** * CURRENT FOCUS
+   * @period 2025 - Present 
+   */
+  public async PersonalProjects(): Promise<any> {
+    const role = "Full-Stack Developer / AI Enthusiast";
+
+    // Key Projects
+    const ecommerceApp = await api.build({
+      name: "E-Commerce Web App",
+      stack: "MERN",
+      features: ["User Auth", "Product Management", "Cart Functionality"]
+    });
+
+    const aiChatbot = await api.build({
+      name: "AI Chatbot",
+      stack: "Generative AI + React",
+      features: ["Real-time Responses", "OpenAI API Integration"]
+    });
+
+    return { role, ecommerceApp, aiChatbot };
+  }
+
+  /** * PREVIOUS ACADEMIC PROJECTS
+   * @period 2024 - 2025
+   */
+  public AcademicProjects(): void {
+    this.project1 = "Library Management System - Node.js + MongoDB";
+    this.project2 = "Portfolio Website - React + TailwindCSS";
+  }
+}
+
+// --------------------------------------------------
+// 3. CERTIFICATIONS / ACHIEVEMENTS
+// --------------------------------------------------
+
+interface Achievement {
+  title: string;
+  organization: string;
+  year: number;
+}
+
+const achievements: Achievement[] = [
+  {
+    title: "MERN Stack Development",
+    organization: "Coursera",
+    year: 2025
+  },
+  {
+    title: "Generative AI Specialization",
+    organization: "DeepLearning.AI",
+    year: 2025
+  }
+];
+
+// --------------------------------------------------
+// 4. EDUCATION
+// --------------------------------------------------
+
+const education = new Map<string, string>([
+  ["RGPV University", "B.Tech Computer Science (Current CGPA: 7.25, 6th Sem)"],
+  ["Millat College, Darbhanga", "12th Bihar Board - 65.3%"]
+]);
+
+// --------------------------------------------------
+// 5. STATUS
+// --------------------------------------------------
+
+const STATUS = {
+  availability: "Open to Opportunities",
+  location: "India / Remote",
+};
+
+export default new ProfessionalHistory();
